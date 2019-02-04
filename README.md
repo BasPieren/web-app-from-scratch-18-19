@@ -28,7 +28,6 @@ To install this application enter the following into your terminal:
 git clone https://github.com/BasPieren/web-app-from-scratch-18-19.git
 
 cd web-app-from-scratch-18-19
-
 ```
 
 ### Packages and technologies
