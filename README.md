@@ -35,6 +35,7 @@ This project makes use of the following packages and technologies:
 ## Sources 📚
 
   * [Fetching data from the server](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data)
+  * [Sorting an array of JavaScript objects](https://stackoverflow.com/questions/979256/sorting-an-array-of-javascript-objects)
 
 ### Honourable Mentions
 
