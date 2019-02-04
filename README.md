@@ -1,4 +1,47 @@
-# Web App From Scratch @cmda-minor-web 18-19
+# Web App From Scratch @cmda-minor-web 18-19 ⚙️
+
+This is my repo for Web App From Scratch course.
+
+## Table of Contents 🗃
+* [To Do](#to-do-)
+* [Description](#description-)
+* [Installing](#installing-)
+  * [Packages and technologies](#packages-and-technologies)
+* [Sources](#sources-)
+  * [Honourable Mentions](#honourable-mentions)
+* [Licence](#licence-)
+
+## To Do 📌
+This is a list of things in want to do in this project:
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+
+## Description 📝
+During this project I used the d3 javascript library to make a interactive data presentation using data from the OBA API. I looked for interesting patterns of books about World War II.
+
+## Installing 🔍
+To install this application enter the following into your terminal:
+```
+git clone https://github.com/BasPieren/web-app-from-scratch-18-19.git
+
+cd web-app-from-scratch-18-19
+
+```
+
+### Packages and technologies
+This project makes use of the following packages and technologies:
+
+## Sources 📚
+
+### Honourable Mentions
+
+## Licence 🔓
+MIT © [Bas Pieren](https://github.com/BasPieren)
+
+<!-- # Web App From Scratch @cmda-minor-web 18-19
 
 In dit vak gaan we een web app maken zonder frameworks of onnodige libraries, dus zoveel mogelijk met native HTML, CSS & JavaScript. Het eindproduct is een modulair opgezet prototype voor een single page web app. Data wordt opgehaald uit een externe API, waar nodig gemanipuleerd en vervolgens getoond in de Web App. Je leert hoe je structuur aanbrengt in je code en hoe je hiermee 'from scratch' een (prototype voor een) web app maakt. Met deze kennis begrijp je daarnaast beter hoe bestaande api’s, libraries en frameworks werken.
 
@@ -34,7 +77,7 @@ Doel: Data manipuleren. Code splitsen in modules. Reflecteren op eindresultaat.
 
 [Opdrachten](https://drive.google.com/open?id=13pKQu72pshaEzKw9q5JHLa-aop85nMP6nDCdqioWjoQ)
 
-[Slides](https://drive.google.com/open?id=1BSzGYNLMgtHD4HRnK7f0DgyTv4Pg3xsQwD_eYNo7v0Y)
+[Slides](https://drive.google.com/open?id=1BSzGYNLMgtHD4HRnK7f0DgyTv4Pg3xsQwD_eYNo7v0Y) -->
 
 
 <!-- Add a link to your live demo in Github Pages 🌐-->
