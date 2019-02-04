@@ -20,7 +20,6 @@ This is a list of things in want to do in this project:
 - [ ]
 
 ## Description 📝
-During this project I used the d3 javascript library to make a interactive data presentation using data from the OBA API. I looked for interesting patterns of books about World War II.
 
 ## Installing 🔍
 To install this application enter the following into your terminal:
@@ -34,6 +33,8 @@ cd web-app-from-scratch-18-19
 This project makes use of the following packages and technologies:
 
 ## Sources 📚
+
+  * [Fetching data from the server](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data)
 
 ### Honourable Mentions
 
