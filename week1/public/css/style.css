@@ -16,7 +16,7 @@ h1{
   margin: 1em 0;
   text-align: center;
   font-family: 'STARWARS', sans-serif;
-  font-size: 1.5em;
+  font-size: 1.6em;
   color: #FFD700;
 }
 
@@ -69,11 +69,17 @@ main > article > h2{
 
 @media (min-width: 1024px) {
 
-
+  h1{
+    font-size: 1.8em;
+  }
 
 }
 
 @media (min-width: 1440px) {
+
+  h1{
+    font-size: 2em;
+  }
 
   main{
     grid-template-columns: 1fr 1fr 1fr;
