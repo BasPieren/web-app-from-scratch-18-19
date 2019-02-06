@@ -9,39 +9,54 @@ https://stackoverflow.com/questions/979256/sorting-an-array-of-javascript-object
 
   var main = document.querySelector('main'),
       url = 'https://swapi.co/api/films/',
-      request = new XMLHttpRequest();
+      request = new XMLHttpRequest()
 
-  request.open('GET', url)
-  request.onload = getData
+  var getData = new Promise(function(resolve, reject){
 
-  request.send()
+  request.open('GET', url, true)
+  request.onload = function(){
+      if (request.status >= 200 && request.status < 400) {
+        const data = JSON.parse(request.responseText)
+        resolve(data)
+      } else {
+        reject(error)
+      }
+    }
+    request.onerror = function() {
+      reject(Error('Error jonge!'))
+    }
 
-  function getData() {
-    var data = request.response,
-        dataJSON = JSON.parse(data).results
+    request.send()
+  })
 
-    dataJSON.sort(function(a, b){
+  getData.then(function(data){
+    renderData(data)
+  })
+
+  function renderData(e) {
+
+    //console.log(e.results)
+
+    e.results.sort(function(a, b){
       return (a.episode_id) - (b.episode_id)
     })
 
-    for (var i = 0; i < dataJSON.length; i++) {
+    e.results.forEach(function(a){
       var article = document.createElement('article'),
           h2 = document.createElement('h2'),
           h3 = document.createElement('h3'),
           p = document.createElement('p')
 
-      h2.textContent = dataJSON[i].title
-      h3.textContent = 'Episode ' + dataJSON[i].episode_id
-      p.textContent = dataJSON[i].opening_crawl
+      h2.textContent = a.title
+      h3.textContent = 'Episode ' + a.episode_id
+      p.textContent = a.opening_crawl
 
       main.appendChild(article)
 
       article.appendChild(h3)
       article.appendChild(h2)
       article.appendChild(p)
-    }
-
-    console.log(dataJSON)
+    })
   }
 
-})();
+})()
