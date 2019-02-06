@@ -3,6 +3,7 @@
 /* ------ SOURCES
 https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data
 https://stackoverflow.com/questions/979256/sorting-an-array-of-javascript-objects
+https://codepen.io/joostf/pen/OQxpxx
 ------ */
 
 (function(){
