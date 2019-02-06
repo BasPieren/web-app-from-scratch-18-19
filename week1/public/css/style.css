@@ -16,6 +16,7 @@ h1{
   margin: 1em 0;
   text-align: center;
   font-family: 'STARWARS', sans-serif;
+  font-size: 1.5em;
   color: #FFD700;
 }
 
@@ -35,7 +36,7 @@ p{
   font-family: 'Open Sans Condensed', sans-serif;
   color: #FFD700;
   font-weight: 700;
-  line-height: 1.5em;
+  line-height: 1.8em;
 }
 
 /* ---------- MAIN ---------- */
@@ -43,7 +44,7 @@ p{
 main{
   padding: 0 1em 1em 1em;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 1em;
   text-align: center;
 }
@@ -54,4 +55,28 @@ main > article{
 
 main > article > h2{
   margin: 1em 0;
+}
+
+/* ----- MEDIA QUERY ----- */
+
+@media (min-width: 768px) {
+
+  main{
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+@media (min-width: 1024px) {
+
+
+
+}
+
+@media (min-width: 1440px) {
+
+  main{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
 }
