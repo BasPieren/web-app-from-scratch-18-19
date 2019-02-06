@@ -36,7 +36,7 @@ https://codepen.io/joostf/pen/OQxpxx
 
   function renderData(e) {
 
-    //console.log(e.results)
+    console.log(e.results)
 
     e.results.sort(function(a, b){
       return (a.episode_id) - (b.episode_id)
