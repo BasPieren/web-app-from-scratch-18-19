@@ -2,17 +2,35 @@
 
 This is my repo for Web App From Scratch course.
 
+![Web App from Scratch Screenshot]()
+
 ## Table of Contents 🗃
 * [To Do](#to-do-)
 * [Description](#description-)
 * [Installing](#installing-)
   * [Packages and technologies](#packages-and-technologies)
+* [API](#api-)
 * [Sources](#sources-)
   * [Honourable Mentions](#honourable-mentions)
 * [Licence](#licence-)
 
 ## To Do 📌
-This is a list of things in want to do in this project:
+This is a list of things in want to do in this course:
+
+### Week 1
+- [X] Request data from the API with a asynchronous call.
+- [X] Parse the data to JSON and save it in a temporary object.
+- [X] Render data from the API on the overview page.
+- [X] Use a `Promise` to request data from the API.
+
+### Week 2
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+
+### Week 3
 - [ ]
 - [ ]
 - [ ]
@@ -20,6 +38,7 @@ This is a list of things in want to do in this project:
 - [ ]
 
 ## Description 📝
+
 
 ## Installing 🔍
 To install this application enter the following into your terminal:
@@ -32,6 +51,13 @@ cd web-app-from-scratch-18-19
 ### Packages and technologies
 This project makes use of the following packages and technologies:
 
+  * None!
+
+## API 🐒
+I made use of the following API for this project:
+
+* [SWAPI](https://swapi.co)
+
 ## Sources 📚
 
   * [Fetching data from the server](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data)
@@ -39,6 +65,8 @@ This project makes use of the following packages and technologies:
   * [Get request (promise)](https://codepen.io/joostf/pen/OQxpxx)
 
 ### Honourable Mentions
+
+  * [Help from Jesse Dijkman](https://github.com/jesseDijkman1)
 
 ## Licence 🔓
 MIT © [Bas Pieren](https://github.com/BasPieren)
