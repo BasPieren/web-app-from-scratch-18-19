@@ -1,6 +1,6 @@
 # Web App From Scratch @cmda-minor-web 18-19 ⚙️
 
-This is my repo for Web App From Scratch course.
+This is my repo for the Web App From Scratch course.
 
 ![Web App from Scratch Screenshot](https://i.imgur.com/JNxqzvJ.png)
 
@@ -18,7 +18,7 @@ This is my repo for Web App From Scratch course.
 * [Licence](#licence-)
 
 ## To Do 📌
-This is a list of things in want to do in this course:
+This is a list of things I want to do in this course:
 
 ### Week 1
 [Project link](https://baspieren.github.io/web-app-from-scratch-18-19/week1/)
@@ -43,7 +43,7 @@ This is a list of things in want to do in this course:
 - [ ]
 
 ## Description 📝
-
+During this course I created a web app from scratch, so without any frameworks or libraries, using HTML, CSS and Javascript. The data I use comes from the [Star Wars API](#api-). For now it only displays data from the API which is fetched using a `promise`.
 
 ## Installing 🔍
 To install this application enter the following into your terminal:
@@ -93,7 +93,7 @@ getData.then(function(data){
 ```
 
 ### Rendering Data
-When I have fetched the data I start the `renderData` function.
+When I have fetched the data I start the `renderData` function. First we sort the data we have gotten by episode id starting from the lowest to the highest. Then we run a `forEach` to create and append an article with data for each movie.
 
 ```js
 function renderData(e) {
@@ -126,7 +126,7 @@ I made use of the following API for this project:
 
 * [SWAPI](https://swapi.co)
 
-The Star Wars API allow you to get data on different Star Wars subjects like the movies, characters and planets. You can use a couple of different endpoints to access this data:
+The Star Wars API allows you to get data on different Star Wars subjects like the movies, characters and planets. You can use a couple of different endpoints to access this data:
 ```js
 {
     "films": "https://swapi.co/api/films/",
