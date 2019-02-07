@@ -43,7 +43,7 @@ This is a list of things I want to do in this course:
 - [ ] .
 
 ## Description 📝
-During this course I created a web app from scratch, so without any frameworks or libraries, using HTML, CSS and Javascript. The data I use comes from the [Star Wars API](#api-). For now it only displays data from the API which is fetched using a `promise`.
+During this course I created a web app from scratch, so without any frameworks or libraries, using HTML, CSS and Javascript. The data I use comes from the [Star Wars API](#api-). For now it only displays data from the API which is fetched using a `Promise`.
 
 ## Installing 🔍
 To install this application enter the following into your terminal:
