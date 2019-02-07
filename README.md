@@ -8,9 +8,11 @@ This is my repo for Web App From Scratch course.
 * [To Do](#to-do-)
 * [Description](#description-)
 * [Installing](#installing-)
-  * [Packages and technologies](#packages-and-technologies)
+  * [Packages and Technologies](#packages-and-technologies)
 * [API](#api-)
-* [How it works](#how-it-works-)
+* [How It Works](#how-it-works-)
+  * [Fetching API Data](#fetching-api-data)
+  * [Rendering Data](#rendering-data)
 * [Sources](#sources-)
   * [Honourable Mentions](#honourable-mentions)
 * [Licence](#licence-)
@@ -51,15 +53,15 @@ git clone https://github.com/BasPieren/web-app-from-scratch-18-19.git
 cd web-app-from-scratch-18-19
 ```
 
-### Packages and technologies
+### Packages and Technologies
 This project makes use of the following packages and technologies:
 
   * None!
 
-## How it works 🛠️
+## How It Works 🛠️
 Here I explain some of the core concepts of this project.
 
-### Fetching API data
+### Fetching API Data
 I make use of a promise to get back data using `https://swapi.co/api/films/` as endpoint.
 
 ```js
@@ -90,7 +92,7 @@ getData.then(function(data){
 })
 ```
 
-### Rendering data
+### Rendering Data
 When I have fetched the data I start the `renderData` function.
 
 ```js
