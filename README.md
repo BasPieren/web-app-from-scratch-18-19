@@ -29,18 +29,18 @@ This is a list of things I want to do in this course:
 - [X] Use a `Promise` to request data from the API.
 
 ### Week 2
-- []
-- []
-- []
-- []
-- []
+- [ ] .
+- [ ] .
+- [ ] .
+- [ ] .
+- [ ] .
 
 ### Week 3
-- []
-- []
-- []
-- []
-- []
+- [ ] .
+- [ ] .
+- [ ] .
+- [ ] .
+- [ ] .
 
 ## Description 📝
 During this course I created a web app from scratch, so without any frameworks or libraries, using HTML, CSS and Javascript. The data I use comes from the [Star Wars API](#api-). For now it only displays data from the API which is fetched using a `promise`.
