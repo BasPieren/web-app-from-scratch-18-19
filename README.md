@@ -2,7 +2,7 @@
 
 This is my repo for Web App From Scratch course.
 
-![Web App from Scratch Screenshot]()
+![Web App from Scratch Screenshot](https://i.imgur.com/JNxqzvJ.png)
 
 ## Table of Contents 🗃
 * [To Do](#to-do-)
@@ -10,6 +10,7 @@ This is my repo for Web App From Scratch course.
 * [Installing](#installing-)
   * [Packages and technologies](#packages-and-technologies)
 * [API](#api-)
+* [How it works](#how-it-works-)
 * [Sources](#sources-)
   * [Honourable Mentions](#honourable-mentions)
 * [Licence](#licence-)
@@ -18,6 +19,8 @@ This is my repo for Web App From Scratch course.
 This is a list of things in want to do in this course:
 
 ### Week 1
+[Project link](https://baspieren.github.io/web-app-from-scratch-18-19/week1/)
+
 - [X] Request data from the API with a asynchronous call.
 - [X] Parse the data to JSON and save it in a temporary object.
 - [X] Render data from the API on the overview page.
@@ -53,10 +56,85 @@ This project makes use of the following packages and technologies:
 
   * None!
 
+## How it works 🛠️
+Here I explain some of the core concepts of this project.
+
+### Fetching API data
+I make use of a promise to get back data using `https://swapi.co/api/films/` as endpoint.
+
+```js
+var main = document.querySelector('main'),
+    url = 'https://swapi.co/api/films/',
+    request = new XMLHttpRequest()
+
+var getData = new Promise(function(resolve, reject){
+
+request.open('GET', url, true)
+request.onload = function(){
+    if (request.status >= 200 && request.status < 400) {
+      const data = JSON.parse(request.responseText)
+      resolve(data)
+    } else {
+      reject(error)
+    }
+  }
+  request.onerror = function() {
+    reject(Error('Error jonge!'))
+  }
+
+  request.send()
+})
+
+getData.then(function(data){
+  renderData(data)
+})
+```
+
+### Rendering data
+When I have fetched the data I start the `renderData` function.
+
+```js
+function renderData(e) {
+
+  e.results.sort(function(a, b){
+    return (a.episode_id) - (b.episode_id)
+  })
+
+  e.results.forEach(function(a){
+    var article = document.createElement('article'),
+        h2 = document.createElement('h2'),
+        h3 = document.createElement('h3'),
+        p = document.createElement('p')
+
+    h2.textContent = a.title
+    h3.textContent = 'Episode ' + a.episode_id
+    p.textContent = a.opening_crawl
+
+    main.appendChild(article)
+
+    article.appendChild(h3)
+    article.appendChild(h2)
+    article.appendChild(p)
+  })
+}
+```
+
 ## API 🐒
 I made use of the following API for this project:
 
 * [SWAPI](https://swapi.co)
+
+The Star Wars API allow you to get data on different Star Wars subjects like the movies, characters and planets. You can use a couple of different endpoints to access this data:
+```js
+{
+    "films": "https://swapi.co/api/films/",
+    "people": "https://swapi.co/api/people/",
+    "planets": "https://swapi.co/api/planets/",
+    "species": "https://swapi.co/api/species/",
+    "starships": "https://swapi.co/api/starships/",
+    "vehicles": "https://swapi.co/api/vehicles/"
+}
+```
 
 ## Sources 📚
 
