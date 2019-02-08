@@ -25,8 +25,8 @@ https://codepen.io/joostf/pen/OQxpxx
         reject(error)
       }
     }
-    request.onerror = () => {
-      reject(Error('Error jonge!'))
+    request.onerror = (e) => {
+      resolve(e)
     }
 
     request.send()
