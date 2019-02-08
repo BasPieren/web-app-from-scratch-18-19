@@ -12,10 +12,10 @@ https://codepen.io/joostf/pen/OQxpxx
       url = 'https://swapi.co/api/films/',
       request = new XMLHttpRequest()
 
-  var getData = new Promise(function(resolve, reject){
+  var getData = new Promise((resolve, reject) => {
 
   request.open('GET', url, true)
-  request.onload = function(){
+  request.onload = () => {
       if (request.status >= 200 && request.status < 400) {
         const data = JSON.parse(request.responseText)
         resolve(data)
@@ -23,7 +23,7 @@ https://codepen.io/joostf/pen/OQxpxx
         reject(error)
       }
     }
-    request.onerror = function() {
+    request.onerror = () => {
       reject(Error('Error jonge!'))
     }
 
@@ -31,22 +31,18 @@ https://codepen.io/joostf/pen/OQxpxx
   })
 
   getData
-    .then(function(data){
-      renderData(data)
-    })
-    .catch(function(error){
-      console.error(error)
-    })
+    .then(data => renderData(data))
+    .catch(error => console.error(error))
 
   function renderData(e) {
 
     console.log(e.results)
 
-    e.results.sort(function(a, b){
+    e.results.sort((a, b) => {
       return (a.episode_id) - (b.episode_id)
     })
 
-    e.results.forEach(function(a){
+    e.results.forEach((a) => {
       var article = document.createElement('article'),
           h2 = document.createElement('h2'),
           h3 = document.createElement('h3'),
