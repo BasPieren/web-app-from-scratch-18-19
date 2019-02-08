@@ -30,9 +30,13 @@ https://codepen.io/joostf/pen/OQxpxx
     request.send()
   })
 
-  getData.then(function(data){
-    renderData(data)
-  })
+  getData
+    .then(function(data){
+      renderData(data)
+    })
+    .catch(function(error){
+      console.error(error)
+    })
 
   function renderData(e) {
 
