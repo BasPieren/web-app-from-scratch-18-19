@@ -67,7 +67,7 @@ I make use of `fetch()` to get back data using `https://swapi.co/api/films/` as 
 
 ```js
 function getData() {
-  fetch(url)
+  fetch('https://swapi.co/api/films/')
     .then(respone => {
       return respone.json()
     })
@@ -83,6 +83,8 @@ When I have fetched the data I start the `renderData` function. First we sort th
 
 ```js
 function renderData(e) {
+
+  const main = document.querySelector('main')
 
   e.results.sort((a, b) => {
     return (a.episode_id) - (b.episode_id)
