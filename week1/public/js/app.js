@@ -9,36 +9,47 @@ https://codepen.io/joostf/pen/OQxpxx
 (() => {
 
   const main = document.querySelector('main'),
-        url = 'https://swapi.co/api/films/',
-        request = new XMLHttpRequest()
+        url = 'https://swapi.co/api/films/'
+        // request = new XMLHttpRequest()
 
-  let getData = new Promise((resolve, reject) => {
+  function getData() {
+    fetch(url)
+      .then(respone => {
+        return respone.json()
+      })
+      .then(data => {
+        renderData(data)
+      })
+      .catch(error => console.error(error))
+  }
 
-  request.open('GET', url, true)
-  request.addEventListener("load", requestData)
+  getData();
 
-  function requestData() {
-      if (request.status >= 200 && request.status < 400) {
-        const data = JSON.parse(request.responseText)
-        resolve(data)
-      } else {
-        reject(error)
-      }
-    }
-    request.onerror = (e) => {
-      resolve(e)
-    }
-
-    request.send()
-  })
-
-  getData
-    .then(data => renderData(data))
-    .catch(error => console.error(error))
+  // let getData = new Promise((resolve, reject) => {
+  //
+  // request.open('GET', url, true)
+  // request.addEventListener("load", requestData)
+  //
+  // function requestData() {
+  //     if (request.status >= 200 && request.status < 400) {
+  //       const data = JSON.parse(request.responseText)
+  //       resolve(data)
+  //     } else {
+  //       reject(error)
+  //     }
+  //   }
+  //   request.onerror = (e) => {
+  //     resolve(e)
+  //   }
+  //
+  //   request.send()
+  // })
+  //
+  // getData
+  //   .then(data => renderData(data))
+  //   .catch(error => console.error(error))
 
   function renderData(e) {
-
-    console.log(e.results)
 
     e.results.sort((a, b) => {
       return (a.episode_id) - (b.episode_id)
