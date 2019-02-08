@@ -62,7 +62,7 @@ This project makes use of the following packages and technologies:
 Here I explain some of the core concepts of this project.
 
 ### Fetching API Data
-I make use of a promise to get back data using `https://swapi.co/api/films/` as endpoint.
+I make use of a promise to get back data using `https://swapi.co/api/films/` as endpoint. First we define the main variables that we will be using: a `querySelector` to select the `main` attribute, the API url and the `XMLHttpRequest`. Then we start a new promise with the `getData` variable. We open a request to the API using the url, after which we load a function where we check the request status. If everything goes well we start the `renderData` function.
 
 ```js
 var main = document.querySelector('main'),
