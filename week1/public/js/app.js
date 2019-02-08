@@ -8,11 +8,11 @@ https://codepen.io/joostf/pen/OQxpxx
 
 (function(){
 
-  var main = document.querySelector('main'),
-      url = 'https://swapi.co/api/films/',
-      request = new XMLHttpRequest()
+  const main = document.querySelector('main'),
+        url = 'https://swapi.co/api/films/',
+        request = new XMLHttpRequest()
 
-  var getData = new Promise((resolve, reject) => {
+  let getData = new Promise((resolve, reject) => {
 
   request.open('GET', url, true)
   request.onload = () => {
@@ -43,10 +43,10 @@ https://codepen.io/joostf/pen/OQxpxx
     })
 
     e.results.forEach((a) => {
-      var article = document.createElement('article'),
-          h2 = document.createElement('h2'),
-          h3 = document.createElement('h3'),
-          p = document.createElement('p')
+      const article = document.createElement('article'),
+            h2 = document.createElement('h2'),
+            h3 = document.createElement('h3'),
+            p = document.createElement('p')
 
       h2.textContent = a.title
       h3.textContent = 'Episode ' + a.episode_id
