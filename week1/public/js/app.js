@@ -6,7 +6,7 @@ https://stackoverflow.com/questions/979256/sorting-an-array-of-javascript-object
 https://codepen.io/joostf/pen/OQxpxx
 ------ */
 
-(function(){
+(() => {
 
   const main = document.querySelector('main'),
         url = 'https://swapi.co/api/films/',
