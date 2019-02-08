@@ -27,6 +27,7 @@ This is a list of things I want to do in this course:
 - [X] Parse the data to JSON and save it in a temporary object.
 - [X] Render data from the API on the overview page.
 - [X] Use a `Promise` to request data from the API.
+- [X] Use `fetch()` to request data from the API.
 
 ### Week 2
 - [ ] .
@@ -43,7 +44,7 @@ This is a list of things I want to do in this course:
 - [ ] .
 
 ## Description 📝
-During this course I created a web app from scratch, so without any frameworks or libraries, using HTML, CSS and Javascript. The data I use comes from the [Star Wars API](#api-). For now it only displays data from the API which is fetched using a `Promise`.
+During this course I created a web app from scratch, so without any frameworks or libraries, using HTML, CSS and Javascript. The data I use comes from the [Star Wars API](#api-). For now it only displays data from the API which is requested using `fetch()`.
 
 ## Installing 🔍
 To install this application enter the following into your terminal:
@@ -62,34 +63,19 @@ This project makes use of the following packages and technologies:
 Here I explain some of the core concepts of this project.
 
 ### Fetching API Data
-I make use of a promise to get back data using `https://swapi.co/api/films/` as endpoint. First we define the main variables that we will be using: a `querySelector` to select the `main` attribute, the API url and the `XMLHttpRequest`. Then we start a new promise with the `getData` variable. We open a request to the API using the url, after which we load a function where we check the request status. If everything goes well we start the `renderData` function.
+I make use of `fetch()` to get back data using `https://swapi.co/api/films/` as endpoint. First we parse the response we get from the API to JSON. After that we render the data using the `renderData` function. If an error occurs at any point we catch it and send an error message using `console.error()`.
 
 ```js
-var main = document.querySelector('main'),
-    url = 'https://swapi.co/api/films/',
-    request = new XMLHttpRequest()
-
-var getData = new Promise(function(resolve, reject){
-
-request.open('GET', url, true)
-request.onload = function(){
-    if (request.status >= 200 && request.status < 400) {
-      const data = JSON.parse(request.responseText)
-      resolve(data)
-    } else {
-      reject(error)
-    }
-  }
-  request.onerror = function() {
-    reject(Error('Error jonge!'))
-  }
-
-  request.send()
-})
-
-getData.then(function(data){
-  renderData(data)
-})
+function getData() {
+  fetch(url)
+    .then(respone => {
+      return respone.json()
+    })
+    .then(data => {
+      renderData(data)
+    })
+    .catch(error => console.error(error))
+}
 ```
 
 ### Rendering Data
@@ -98,15 +84,15 @@ When I have fetched the data I start the `renderData` function. First we sort th
 ```js
 function renderData(e) {
 
-  e.results.sort(function(a, b){
+  e.results.sort((a, b) => {
     return (a.episode_id) - (b.episode_id)
   })
 
-  e.results.forEach(function(a){
-    var article = document.createElement('article'),
-        h2 = document.createElement('h2'),
-        h3 = document.createElement('h3'),
-        p = document.createElement('p')
+  e.results.forEach((a) => {
+    const article = document.createElement('article'),
+          h2 = document.createElement('h2'),
+          h3 = document.createElement('h3'),
+          p = document.createElement('p')
 
     h2.textContent = a.title
     h3.textContent = 'Episode ' + a.episode_id
