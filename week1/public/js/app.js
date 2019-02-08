@@ -15,7 +15,9 @@ https://codepen.io/joostf/pen/OQxpxx
   let getData = new Promise((resolve, reject) => {
 
   request.open('GET', url, true)
-  request.onload = () => {
+  request.addEventListener("load", requestData)
+
+  function requestData() {
       if (request.status >= 200 && request.status < 400) {
         const data = JSON.parse(request.responseText)
         resolve(data)
