@@ -44,9 +44,9 @@ function renderData(e) {
 
   const template = `
     <article>
-      <h3 id="episode_id"></h2>
-      <h2 id="title"></h3>
-      <p id="opening_crawl"></p>
+      <h3 class="episode_id"></h2>
+      <h2 class="title"></h3>
+      <p class="opening_crawl"></p>
     </article>
   `
 
