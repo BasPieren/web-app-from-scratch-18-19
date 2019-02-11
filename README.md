@@ -23,18 +23,17 @@ This is a list of things I want to do in this course:
 ### Week 1
 [Project link](https://baspieren.github.io/web-app-from-scratch-18-19/week1/)
 
-- [X] Request data from the API with a asynchronous call.
+- [X] Request data from the API with an asynchronous call.
 - [X] Parse the data to JSON and save it in a temporary object.
 - [X] Render data from the API on the overview page.
 - [X] Use a `Promise` to request data from the API.
 - [X] Use `fetch()` to request data from the API.
 
 ### Week 2
-- [ ] .
-- [ ] .
-- [ ] .
-- [ ] .
-- [ ] .
+- [ ] Make an actor diagram.
+- [ ] Make an interaction diagram.
+- [ ] Use routing for detail pages.
+- [ ] Use a templating engine.
 
 ### Week 3
 - [ ] .
