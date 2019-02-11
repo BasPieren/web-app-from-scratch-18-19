@@ -35,7 +35,7 @@ This is a list of things I want to do in this course:
 - [ ] Make an actor diagram.
 - [ ] Make an interaction diagram.
 - [ ] Use routing for the detail pages.
-- [ ] Use a templating engine.
+- [X] Use a templating engine.
 
 ### Week 3
 - [ ] .
