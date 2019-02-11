@@ -8,8 +8,8 @@ https://codepen.io/joostf/pen/OQxpxx
 
 function getData() {
   fetch('https://swapi.co/api/films/')
-    .then(respone => {
-      return respone.json()
+    .then(response => {
+      return response.json()
     })
     .then(data => {
       renderData(data)
@@ -17,7 +17,7 @@ function getData() {
     .catch(error => console.error(error))
 }
 
-getData();
+getData()
 
 function renderData(e) {
 
