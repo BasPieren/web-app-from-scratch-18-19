@@ -25,7 +25,7 @@ function filterData(f) {
   let dataFiltered = allMovies.map(a =>{
     return{
       title: a.title,
-      episode_id: a.episode_id,
+      episode_id: 'Episode ' + a.episode_id,
       release_date: a.release_date,
       opening_crawl: a.opening_crawl
     }
@@ -42,20 +42,16 @@ function renderData(e) {
     return (a.episode_id) - (b.episode_id)
   })
 
-  e.forEach((a) => {
-    const article = document.createElement('article'),
-          h2 = document.createElement('h2'),
-          h3 = document.createElement('h3'),
-          p = document.createElement('p')
+  const template = `
+    <article>
+      <h3 id="episode_id"></h2>
+      <h2 id="title"></h3>
+      <p id="opening_crawl"></p>
+    </article>
+  `
 
-    h2.textContent = a.title
-    h3.textContent = 'Episode ' + a.episode_id
-    p.textContent = a.opening_crawl
+  main.innerHTML = template
 
-    main.appendChild(article)
+  Transparency.render(main, e)
 
-    article.appendChild(h3)
-    article.appendChild(h2)
-    article.appendChild(p)
-  })
 }
