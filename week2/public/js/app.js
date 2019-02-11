@@ -12,22 +12,37 @@ function getData() {
       return response.json()
     })
     .then(data => {
-      renderData(data)
+      filterData(data)
     })
     .catch(error => console.error(error))
 }
 
 getData()
 
+function filterData(f) {
+  let allMovies = f.results
+
+  let dataFiltered = allMovies.map(a =>{
+    return{
+      title: a.title,
+      episode_id: a.episode_id,
+      release_date: a.release_date,
+      opening_crawl: a.opening_crawl
+    }
+  })
+
+  renderData(dataFiltered)
+}
+
 function renderData(e) {
 
   const main = document.querySelector('main')
 
-  e.results.sort((a, b) => {
+  e.sort((a, b) => {
     return (a.episode_id) - (b.episode_id)
   })
 
-  e.results.forEach((a) => {
+  e.forEach((a) => {
     const article = document.createElement('article'),
           h2 = document.createElement('h2'),
           h3 = document.createElement('h3'),
