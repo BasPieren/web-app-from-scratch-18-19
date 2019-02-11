@@ -30,9 +30,11 @@ This is a list of things I want to do in this course:
 - [X] Use `fetch()` to request data from the API.
 
 ### Week 2
+[Project link](https://baspieren.github.io/web-app-from-scratch-18-19/week2/)
+
 - [ ] Make an actor diagram.
 - [ ] Make an interaction diagram.
-- [ ] Use routing for detail pages.
+- [ ] Use routing for the detail pages.
 - [ ] Use a templating engine.
 
 ### Week 3
