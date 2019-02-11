@@ -58,7 +58,7 @@ cd web-app-from-scratch-18-19
 ### Packages and Technologies
 This project makes use of the following packages and technologies:
 
-  * None!
+  * [Transparency](https://github.com/leonidas/transparency)
 
 ## How It Works 🛠️
 Here I explain some of the core concepts of this project.
