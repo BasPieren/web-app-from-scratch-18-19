@@ -6,6 +6,7 @@ https://stackoverflow.com/questions/979256/sorting-an-array-of-javascript-object
 https://codepen.io/joostf/pen/OQxpxx
 ------ */
 
+// Fetch data from the API
 function getData() {
   const apiURL = 'https://swapi.co/api/films/'
 
@@ -17,6 +18,9 @@ function getData() {
       routie({
         'allMovies': () => {
           renderData(data)
+        },
+        'detailPage': () => {
+          detailPage(data)
         }
       })
       // filterData(data)
@@ -25,16 +29,33 @@ function getData() {
 }
 getData()
 
+// Render overview page
 function renderData(e) {
-  var newObj = filterData(e)
+  console.log(e)
+  let newObj = filterData(e),
+      directives = {
+        episode_id: {
+          text: function(params) { // Arrow function doesn't work?
+            return params.value + this.episode_id
+          }
+        },
+        detail_page: {
+          text: (params) => {
+            return params.value
+          },
+          href: function() { // Arrow function doesn't work?
+            return this.detail_page
+          }
+        }
+      }
 
   const main = document.querySelector('main'),
         template = `
         <article>
-          <h3 class="episode_id"></h2>
+          <h3 class="episode_id">Episode </h2>
           <h2 class="title"></h3>
           <p class="opening_crawl"></p>
-          <a href="#detail">Details</a>
+          <a class="detail_page">Details</a>
         </article>
         `
 
@@ -44,18 +65,23 @@ function renderData(e) {
 
   main.innerHTML = template
 
-  Transparency.render(main, newObj)
+  Transparency.render(main, newObj, directives)
 }
 
-function filterData(f) {
-  let allMovies = f.results
+function detailPage(e) {
+  console.log('data')
+}
+
+function filterData(e) {
+  let allMovies = e.results
 
   let dataFiltered = allMovies.map(a =>{
     return{
       title: a.title,
       episode_id: a.episode_id,
       release_date: a.release_date,
-      opening_crawl: a.opening_crawl
+      opening_crawl: a.opening_crawl,
+      detail_page: a.episode_id
     }
   })
 
