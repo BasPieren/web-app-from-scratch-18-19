@@ -7,17 +7,45 @@ https://codepen.io/joostf/pen/OQxpxx
 ------ */
 
 function getData() {
-  fetch('https://swapi.co/api/films/')
+  const apiURL = 'https://swapi.co/api/films/'
+
+  fetch(apiURL)
     .then(response => {
       return response.json()
     })
     .then(data => {
-      filterData(data)
+      routie({
+        'allMovies': () => {
+          renderData(data)
+        }
+      })
+      // filterData(data)
     })
     .catch(error => console.error(error))
 }
-
 getData()
+
+function renderData(e) {
+  var newObj = filterData(e)
+
+  const main = document.querySelector('main'),
+        template = `
+        <article>
+          <h3 class="episode_id"></h2>
+          <h2 class="title"></h3>
+          <p class="opening_crawl"></p>
+          <a href="#detail">Details</a>
+        </article>
+        `
+
+  newObj.sort((a, b) => {
+    return (a.episode_id) - (b.episode_id)
+  })
+
+  main.innerHTML = template
+
+  Transparency.render(main, newObj)
+}
 
 function filterData(f) {
   let allMovies = f.results
@@ -25,33 +53,13 @@ function filterData(f) {
   let dataFiltered = allMovies.map(a =>{
     return{
       title: a.title,
-      episode_id: 'Episode ' + a.episode_id,
+      episode_id: a.episode_id,
       release_date: a.release_date,
       opening_crawl: a.opening_crawl
     }
   })
 
-  renderData(dataFiltered)
+  return dataFiltered
 }
 
-function renderData(e) {
-
-  const main = document.querySelector('main')
-
-  e.sort((a, b) => {
-    return (a.episode_id) - (b.episode_id)
-  })
-
-  const template = `
-    <article>
-      <h3 class="episode_id"></h2>
-      <h2 class="title"></h3>
-      <p class="opening_crawl"></p>
-    </article>
-  `
-
-  main.innerHTML = template
-
-  Transparency.render(main, e)
-
-}
+routie('allMovies')
