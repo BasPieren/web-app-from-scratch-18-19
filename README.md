@@ -69,7 +69,7 @@ Here I explain some of the core concepts of this project.
 
 ### Interaction Diagram
 
-<!-- ![Interaction Diagram](https://i.imgur.com/JNxqzvJ.png) -->
+![Interaction Diagram](https://i.imgur.com/kNqeEAt.jpg)
 
 ## API 🐒
 I made use of the following API for this project:
