@@ -11,8 +11,8 @@ This is my repo for the Web App From Scratch course.
   * [Packages and Technologies](#packages-and-technologies)
 * [API](#api-)
 * [How It Works](#how-it-works-)
-  * [Fetching API Data](#fetching-api-data)
-  * [Rendering Data](#rendering-data)
+  * [Actor Diagram](#fetching-api-data)
+  * [Interaction Diagram](#rendering-data)
 * [Sources](#sources-)
   * [Honourable Mentions](#honourable-mentions)
 * [Licence](#licence-)
@@ -63,52 +63,13 @@ This project makes use of the following packages and technologies:
 ## How It Works 🛠️
 Here I explain some of the core concepts of this project.
 
-### Fetching API Data
-I make use of `fetch()` to get back data using `https://swapi.co/api/films/` as endpoint. First we parse the response we get from the API to JSON. After that we render the data using the `renderData` function. If an error occurs at any point we catch it and send an error message using `console.error()`.
+### Actor Diagram
 
-```js
-function getData() {
-  fetch('https://swapi.co/api/films/')
-    .then(respone => {
-      return respone.json()
-    })
-    .then(data => {
-      renderData(data)
-    })
-    .catch(error => console.error(error))
-}
-```
+![Actor Diagram](https://i.imgur.com/SCi0x4u.jpg)
 
-### Rendering Data
-When I have fetched the data I start the `renderData` function. First we sort the data we have gotten by episode id starting from the lowest to the highest. Then we run a `forEach` to create and append an article with data for each movie.
+### Interaction Diagram
 
-```js
-function renderData(e) {
-
-  const main = document.querySelector('main')
-
-  e.results.sort((a, b) => {
-    return (a.episode_id) - (b.episode_id)
-  })
-
-  e.results.forEach((a) => {
-    const article = document.createElement('article'),
-          h2 = document.createElement('h2'),
-          h3 = document.createElement('h3'),
-          p = document.createElement('p')
-
-    h2.textContent = a.title
-    h3.textContent = 'Episode ' + a.episode_id
-    p.textContent = a.opening_crawl
-
-    main.appendChild(article)
-
-    article.appendChild(h3)
-    article.appendChild(h2)
-    article.appendChild(p)
-  })
-}
-```
+<!-- ![Interaction Diagram](https://i.imgur.com/JNxqzvJ.png) -->
 
 ## API 🐒
 I made use of the following API for this project:
