@@ -38,6 +38,8 @@ This is a list of things I want to do in this course:
 - [X] Use a templating engine.
 
 ### Week 3
+[Project link](https://baspieren.github.io/web-app-from-scratch-18-19/week3/)
+
 - [ ] .
 - [ ] .
 - [ ] .
@@ -59,17 +61,20 @@ cd web-app-from-scratch-18-19
 This project makes use of the following packages and technologies:
 
   * [Transparency](https://github.com/leonidas/transparency)
+  * [Routie](https://github.com/jgallen23/routie)
 
 ## How It Works 🛠️
-Here I explain some of the core concepts of this project.
+Here I explain some of the core concepts of this project using an actor and interaction diagram.
 
 ### Actor Diagram
 
 ![Actor Diagram](https://i.imgur.com/SCi0x4u.jpg)
+> An Actor diagram is focused on (code)objects that can be seen as the actors of your code.
 
 ### Interaction Diagram
 
 ![Interaction Diagram](https://i.imgur.com/kNqeEAt.jpg)
+> An interaction diagram focuses on functions and shows how user interaction flows through your application.
 
 ## API 🐒
 I made use of the following API for this project:
@@ -97,6 +102,8 @@ The Star Wars API allows you to get data on different Star Wars subjects like th
 ### Honourable Mentions
 
   * [Help from Jesse Dijkman](https://github.com/jesseDijkman1)
+  * [Help from Jeroen van Berkum](https://github.com/jeroentvb)
+  * [Help from Martijn Reeuwijk](https://github.com/martijnReeuwijk)
 
 ## Licence 🔓
 MIT © [Bas Pieren](https://github.com/BasPieren)
