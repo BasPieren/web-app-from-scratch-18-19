@@ -32,9 +32,9 @@ This is a list of things I want to do in this course:
 ### Week 2
 [Project link](https://baspieren.github.io/web-app-from-scratch-18-19/week2/)
 
-- [ ] Make an actor diagram.
-- [ ] Make an interaction diagram.
-- [ ] Use routing for the detail pages.
+- [X] Make an actor diagram.
+- [X] Make an interaction diagram.
+- [X] Use routing for the detail pages.
 - [X] Use a templating engine.
 
 ### Week 3
