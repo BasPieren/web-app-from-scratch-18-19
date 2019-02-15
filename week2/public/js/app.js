@@ -35,7 +35,6 @@ getData()
 // Render overview page
 function overviewPage(e) {
   const mainOverview = document.querySelector('main')
-
   let filteredData = e,
       dataDirectives = {
         episode_id: {
@@ -59,7 +58,6 @@ function overviewPage(e) {
 // Render detail page
 function detailPage(episode, data) {
   const mainDetail = document.querySelector('main')
-
   let findMatch = data.find(d => d.episode_id == episode),
       dataDirectives = {
         episode_id: {
@@ -101,15 +99,13 @@ function detailTemplate(container, data, dataDir) {
 
   article.innerHTML = detailTemplate
 
-  // To do: body container needs to become mainDetail
   Transparency.render(container, data, dataDir)
 }
 
 // Filter the data
 function filterData(e) {
-  let allMovies = e.results
-
-  let dataFiltered = allMovies.map(a => {
+  let allMovies = e.results,
+      dataFiltered = allMovies.map(a => {
     return{
       title: a.title,
       episode_id: a.episode_id,
