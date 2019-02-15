@@ -49,8 +49,8 @@ function renderData(e) {
       }
 
   // To do: Give each template its own function
-  const main = document.querySelector('main'),
-        template = `
+  const mainOverview = document.querySelector('main'),
+        overviewTemplate = `
         <article>
           <h3 class="episode_id">Episode </h3>
           <h2 class="title"></h2>
@@ -59,9 +59,9 @@ function renderData(e) {
         </article>
         `
 
-  main.innerHTML = template
+  mainOverview.innerHTML = overviewTemplate
 
-  Transparency.render(main, filteredData, dataDirectives)
+  Transparency.render(mainOverview, filteredData, dataDirectives)
 }
 
 // Render detail page
@@ -77,19 +77,20 @@ function detailPage(episode, data) {
       }
 
   // To do: Give each template its own function
-  let body = document.querySelector('body')
-  let main2 = document.querySelector('main'),
-        template = `
-        <article>
-          <h3 class="episode_id">Episode </h3>
-          <h2 class="title"></h2>
-          <p class="opening_crawl"></p>
-        </article>
-        `
-    main2.innerHTML = ''
-    main2.innerHTML = template
+  let body = document.querySelector('body'),
+      mainDetail = document.querySelector('main'),
+      detailTemplate = `
+      <article>
+        <h3 class="episode_id">Episode </h3>
+        <h2 class="title"></h2>
+        <p class="opening_crawl"></p>
+      </article>
+      `
 
-    // To do: Body container needs to become main
+    mainDetail.innerHTML = ''
+    mainDetail.innerHTML = detailTemplate
+
+    // To do: body container needs to become mainDetail
     Transparency.render(body, findMatch, dataDirectives)
 
 }
