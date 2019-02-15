@@ -2,7 +2,7 @@
 
 This is my repo for the Web App From Scratch course.
 
-![Web App from Scratch Screenshot](https://i.imgur.com/JNxqzvJ.png)
+![Web App from Scratch Screenshot](https://i.imgur.com/GmbGwAx.png)
 
 ## Table of Contents 🗃
 * [To Do](#to-do-)
