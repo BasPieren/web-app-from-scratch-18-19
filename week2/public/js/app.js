@@ -20,7 +20,7 @@ function getData() {
         'allMovies': () => {
           renderData(data)
         },
-        'movie/:episode': (episode) => {
+        '/:episode': (episode) => {
           detailPage(episode, data)
         }
       })
@@ -43,7 +43,7 @@ function renderData(e) {
             return params.value
           },
           href: function() { // Arrow function doesn't work?
-            return '#movie/' + this.detail_page
+            return '#/' + this.detail_page
           }
         }
       }
