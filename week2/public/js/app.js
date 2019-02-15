@@ -15,13 +15,16 @@ function getData() {
       return response.json()
     })
     .then(data => {
+      return filterData(data)
+    })
+    .then((e) => {
       // Routing
       routie({
         'allMovies': () => {
-          renderData(data)
+          overviewPage(e)
         },
         '/:episode': (episode) => {
-          detailPage(episode, data)
+          detailPage(episode, e)
         }
       })
     })
@@ -30,8 +33,10 @@ function getData() {
 getData()
 
 // Render overview page
-function renderData(e) {
-  let filteredData = filterData(e),
+function overviewPage(e) {
+  const mainOverview = document.querySelector('main')
+
+  let filteredData = e,
       dataDirectives = {
         episode_id: {
           text: function(params) { // Arrow function doesn't work?
@@ -48,26 +53,14 @@ function renderData(e) {
         }
       }
 
-  // To do: Give each template its own function
-  const mainOverview = document.querySelector('main'),
-        overviewTemplate = `
-        <article>
-          <h3 class="episode_id">Episode </h3>
-          <h2 class="title"></h2>
-          <p class="opening_crawl"></p>
-          <a class="detail_page">Details</a>
-        </article>
-        `
-
-  mainOverview.innerHTML = overviewTemplate
-
-  Transparency.render(mainOverview, filteredData, dataDirectives)
+  overviewTemplate(mainOverview, filteredData, dataDirectives)
 }
 
 // Render detail page
 function detailPage(episode, data) {
-  let newObj = filterData(data),
-      findMatch = newObj.find(d => d.episode_id == episode),
+  const mainDetail = document.querySelector('main')
+
+  let findMatch = data.find(d => d.episode_id == episode),
       dataDirectives = {
         episode_id: {
           text: function(params) { // Arrow function doesn't work?
@@ -76,23 +69,40 @@ function detailPage(episode, data) {
         }
       }
 
-  // To do: Give each template its own function
-  let body = document.querySelector('body'),
-      mainDetail = document.querySelector('main'),
-      detailTemplate = `
-      <article>
-        <h3 class="episode_id">Episode </h3>
-        <h2 class="title"></h2>
-        <p class="opening_crawl"></p>
-      </article>
-      `
+  detailTemplate(mainDetail, findMatch, dataDirectives)
+}
 
-    mainDetail.innerHTML = ''
-    mainDetail.innerHTML = detailTemplate
+// Overview page template
+function overviewTemplate(container, data, dataDir) {
+  const article = document.createElement('article')
+  let overviewTemplate = `
+    <h3 class="episode_id">Episode </h3>
+    <h2 class="title"></h2>
+    <p class="opening_crawl"></p>
+    <a class="detail_page">Details</a>
+  `
 
-    // To do: body container needs to become mainDetail
-    Transparency.render(body, findMatch, dataDirectives)
+  container.appendChild(article)
 
+  article.innerHTML = overviewTemplate
+
+  Transparency.render(container, data, dataDir)
+}
+
+// Detail page template
+function detailTemplate(container, data, dataDir) {
+  const article = document.createElement('article')
+  let detailTemplate = `
+    <h3 class="episode_id">Episode </h3>
+    <h2 class="title"></h2>
+    <p class="opening_crawl"></p>
+    <a href="#allMovies">Terug</a>
+  `
+
+  article.innerHTML = detailTemplate
+
+  // To do: body container needs to become mainDetail
+  Transparency.render(container, data, dataDir)
 }
 
 // Filter the data
