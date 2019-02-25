@@ -71,7 +71,7 @@ Here I explain some of the core concepts of this project using an actor and inte
 
 ### Interaction Diagram
 
-![Interaction Diagram](https://i.imgur.com/kNqeEAt.jpg)
+![Interaction Diagram](https://i.imgur.com/WrwFjQX.jpg)
 > An interaction diagram focuses on functions and shows how user interaction flows through your application.
 
 ## API 🐒
