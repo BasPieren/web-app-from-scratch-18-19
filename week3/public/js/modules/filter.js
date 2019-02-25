@@ -14,5 +14,5 @@ export function filterData(e) {
     return (a.episode_id) - (b.episode_id)
   })
 
-  return dataFiltered
+  localStorage.setItem('data', JSON.stringify(dataFiltered))
 }
