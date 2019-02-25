@@ -1,6 +1,8 @@
-export function overviewPage(e) {
+export function overviewPage() {
   const mainOverview = document.querySelector('main')
-  let filteredData = e,
+
+  let lStorage = localStorage.getItem('data'),
+      filteredData = JSON.parse(lStorage),
       dataDirectives = {
         episode_id: {
           text: function(params) { // Arrow function doesn't work?
@@ -36,18 +38,26 @@ function overviewTemplate(container, data, dataDir) {
   Transparency.render(container, data, dataDir)
 }
 
-export function detailPage(episode, data) {
+export function detailPage(episode) {
   const mainDetail = document.querySelector('main')
-  let findMatch = data.find(d => d.episode_id == episode),
-      dataDirectives = {
-        episode_id: {
-          text: function(params) { // Arrow function doesn't work?
-            return params.value + this.episode_id
-          }
-        }
-      }
 
-  detailTemplate(mainDetail, findMatch, dataDirectives)
+  let lStorage = localStorage.getItem('data'),
+      checkData = (() => {
+        let parseStorage = JSON.parse(lStorage),
+            findMatch = parseStorage.find(d => d.episode_id == episode),
+            dataDirectives = {
+              episode_id: {
+                text: function(params) { // Arrow function doesn't work?
+                  return params.value + this.episode_id
+                }
+              }
+            }
+        if (episode && findMatch.episode_id) {
+          detailTemplate(mainDetail, findMatch, dataDirectives)
+        } else {
+          console.log('Fail')
+        }
+      })()
 }
 
 function detailTemplate(container, data, dataDir) {
