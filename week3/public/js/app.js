@@ -19,11 +19,9 @@ function getData() {
     .then(data => {
       return filterData(data)
     })
-    .then((e) => {
-      routing(e)
+    .then(() => {
+      routing()
     })
     .catch(error => console.error(error))
 }
 getData()
-
-routie('allMovies')
