@@ -11,8 +11,8 @@ This is my repo for the Web App From Scratch course.
   * [Packages and Technologies](#packages-and-technologies)
 * [API](#api-)
 * [How It Works](#how-it-works-)
-  * [Actor Diagram](#fetching-api-data)
-  * [Interaction Diagram](#rendering-data)
+  * [Actor Diagram](#actor-diagram)
+  * [Interaction Diagram](#interaction-diagram)
 * [Sources](#sources-)
   * [Honourable Mentions](#honourable-mentions)
 * [Licence](#licence-)
@@ -40,10 +40,8 @@ This is a list of things I want to do in this course:
 ### Week 3
 [Project link](https://baspieren.github.io/web-app-from-scratch-18-19/week3/)
 
-- [ ] .
-- [ ] .
-- [ ] .
-- [ ] .
+- [X] Make use of `localStorage`.
+- [X] Split code into modules.
 - [ ] .
 
 ## Description 📝
