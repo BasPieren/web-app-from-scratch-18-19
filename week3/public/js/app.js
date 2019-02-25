@@ -9,7 +9,6 @@ https://codepen.io/joostf/pen/OQxpxx
 import { filterData } from './modules/filter.js'
 import { routing } from './modules/routing.js'
 
-// Fetch data from the API
 function getData() {
   const apiURL = 'https://swapi.co/api/films/'
 
