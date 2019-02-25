@@ -1,5 +1,5 @@
-import { overviewPage } from '/week3/public/js/template.js'
-import { detailPage } from '/week3/public/js/template.js'
+import { overviewPage } from '/public/js/template.js'
+import { detailPage } from '/public/js/template.js'
 
 export function routing(e) {
   routie({
