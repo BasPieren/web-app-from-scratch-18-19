@@ -66,7 +66,7 @@ Here I explain some of the core concepts of this project using an actor and inte
 
 ### Actor Diagram
 
-![Actor Diagram](https://i.imgur.com/sYhoAIS.jpg)
+![Actor Diagram](https://i.imgur.com/00AeY3o.jpg)
 > An Actor diagram is focused on (code)objects that can be seen as the actors of your code.
 
 ### Interaction Diagram
