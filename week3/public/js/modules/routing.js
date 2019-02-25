@@ -1,12 +1,14 @@
 import * as template from './template.js'
 
-export function routing(e) {
+export function routing() {
   routie({
     'allMovies': () => {
-      template.overviewPage(e)
+      template.overviewPage()
     },
     '/:episode': (episode) => {
-      template.detailPage(episode, e)
+      template.detailPage(episode)
     }
   })
+
+  routie('allMovies')
 }
