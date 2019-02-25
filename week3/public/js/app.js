@@ -6,8 +6,8 @@ https://stackoverflow.com/questions/979256/sorting-an-array-of-javascript-object
 https://codepen.io/joostf/pen/OQxpxx
 ------ */
 
-import { filterData } from '/public/js/filter.js'
-import { routing } from '/public/js/routing.js'
+import { filterData } from './modules/filter.js'
+import { routing } from './modules/routing.js'
 
 // Fetch data from the API
 function getData() {
