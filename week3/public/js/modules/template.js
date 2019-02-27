@@ -1,6 +1,5 @@
 export function overviewPage() {
-  const mainOverview = document.querySelector('main')
-
+  const overviewMain = document.querySelector('main')
   let lStorage = localStorage.getItem('data'),
       filteredData = JSON.parse(lStorage),
       dataDirectives = {
@@ -14,33 +13,35 @@ export function overviewPage() {
             return params.value
           },
           href: function() { // Arrow function doesn't work?
-            return '#/' + this.detail_page
+            return '#' + this.detail_page
           }
         }
       }
 
-  overviewTemplate(mainOverview, filteredData, dataDirectives)
+  overviewTemplate(overviewMain, filteredData, dataDirectives)
 }
 
 function overviewTemplate(container, data, dataDir) {
-  const article = document.createElement('article')
-  let overviewTemplate = `
-    <h3 class="episode_id">Episode </h3>
-    <h2 class="title"></h2>
-    <p class="opening_crawl"></p>
-    <a class="detail_page">Details</a>
-  `
+  container.innerHTML = ''
 
-  container.appendChild(article)
+  data.forEach(a => {
+    const article = document.createElement('article')
+    let overviewTemplate = `
+      <h3 class="episode_id">Episode </h3>
+      <h2 class="title"></h2>
+      <a class="detail_page">Details</a>
+      `
+      
+    let template = container.appendChild(article)
 
-  article.innerHTML = overviewTemplate
+    article.innerHTML += overviewTemplate
 
-  Transparency.render(container, data, dataDir)
+    Transparency.render(template, a, dataDir)
+  })
 }
 
 export function detailPage(episode) {
-  const mainDetail = document.querySelector('main')
-
+  const detailMain = document.querySelector('main')
   let lStorage = localStorage.getItem('data'),
       checkData = (() => {
         let parseStorage = JSON.parse(lStorage),
@@ -53,7 +54,7 @@ export function detailPage(episode) {
               }
             }
         if (episode && findMatch.episode_id) {
-          detailTemplate(mainDetail, findMatch, dataDirectives)
+          detailTemplate(detailMain, findMatch, dataDirectives)
         } else {
           console.log('Fail')
         }
@@ -61,15 +62,22 @@ export function detailPage(episode) {
 }
 
 function detailTemplate(container, data, dataDir) {
-  const article = document.createElement('article')
+  const main = document.createElement('article'),
+        article = document.createElement('article')
   let detailTemplate = `
     <h3 class="episode_id">Episode </h3>
     <h2 class="title"></h2>
     <p class="opening_crawl"></p>
+    <p class="release_date"></p>
+    <p class="producer"></p>
     <a href="#allMovies">Terug</a>
   `
 
+  container.innerHTML = ''
+
+  let template = container.appendChild(article)
+
   article.innerHTML = detailTemplate
 
-  Transparency.render(container, data, dataDir)
+  Transparency.render(template, data, dataDir)
 }
