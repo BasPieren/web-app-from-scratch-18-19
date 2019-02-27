@@ -5,7 +5,7 @@ export function routing() {
     'allMovies': () => {
       template.overviewPage()
     },
-    '/:episode': (episode) => {
+    ':episode': (episode) => {
       template.detailPage(episode)
     }
   })
