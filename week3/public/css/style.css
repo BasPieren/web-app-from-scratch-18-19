@@ -1,18 +1,18 @@
 /* @font-face kit by Fonts2u (https://fonts2u.com) */ @font-face {font-family:"STARWARS";src:url("../fonts/STARWARS/STARWARS.eot?") format("eot"),url("../fonts/STARWARS/STARWARS.woff") format("woff"),url("../fonts/STARWARS/STARWARS.ttf") format("truetype"),url("../fonts/STARWARS/STARWARS.svg#STARWARS") format("svg");font-weight:normal;font-style:normal;}
-@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
 
 /* ---------- GENERAL ---------- */
 
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
-body{
-  background-color: #000000
+body {
+  background-image: url(../images/background-image.jpg);
 }
 
-h1{
+h1 {
   margin: 1em 0;
   text-align: center;
   font-family: 'STARWARS', sans-serif;
@@ -20,29 +20,34 @@ h1{
   color: #FFD700;
 }
 
-h2{
+h2 {
   font-family: 'Open Sans Condensed', sans-serif;
   color: #FFD700;
   font-weight: 300;
   text-transform: uppercase;
 }
 
-h3{
+h3 {
   font-family: 'Open Sans Condensed', sans-serif;
   color: #FFD700;
   font-weight: 700;
+  text-transform: uppercase;
 }
 
-p{
+p {
   font-family: 'Open Sans Condensed', sans-serif;
   color: #FFD700;
   font-weight: 700;
   line-height: 1.8em;
 }
 
+div p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
 a{
   display: block;
-  margin-top: 2.5em;
   padding: 0.5em 1em;
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 1.2em;
@@ -53,14 +58,14 @@ a{
   transition: 0.5s;
 }
 
-a:hover{
+a:hover {
   background-color: #d1b100;
   cursor: pointer;
 }
 
 /* ---------- MAIN ---------- */
 
-main{
+main {
   padding: 0 1em 1em 1em;
   display: grid;
   grid-template-columns: 1fr;
@@ -68,20 +73,26 @@ main{
   text-align: center;
 }
 
-main > article{
+main > article {
   padding: 2.5em 1em;
   border: 1px solid #FFD700;
 }
 
-main > article > h2{
+main > article > h2 {
   margin: 1em 0;
+}
+
+main > article > div {
+  display: flex;
+  margin: 2.5em 0;
+  justify-content: space-around;
 }
 
 /* ----- MEDIA QUERY ----- */
 
 @media (min-width: 768px) {
 
-  main{
+  main {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -89,7 +100,7 @@ main > article > h2{
 
 @media (min-width: 1024px) {
 
-  h1{
+  h1 {
     font-size: 1.8em;
   }
 
@@ -97,11 +108,11 @@ main > article > h2{
 
 @media (min-width: 1440px) {
 
-  h1{
+  h1 {
     font-size: 2em;
   }
 
-  main{
+  main {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
