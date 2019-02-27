@@ -31,7 +31,7 @@ function overviewTemplate(container, data, dataDir) {
       <h2 class="title"></h2>
       <a class="detail_page">Details</a>
       `
-      
+
     let template = container.appendChild(article)
 
     article.innerHTML += overviewTemplate
@@ -51,6 +51,16 @@ export function detailPage(episode) {
                 text: function(params) { // Arrow function doesn't work?
                   return params.value + this.episode_id
                 }
+              },
+              release_date: {
+                text: function(params) { // Arrow function doesn't work?
+                  return params.value + this.release_date
+                }
+              },
+              producer: {
+                text: function(params) { // Arrow function doesn't work?
+                  return params.value + this.producer
+                }
               }
             }
         if (episode && findMatch.episode_id) {
@@ -68,8 +78,10 @@ function detailTemplate(container, data, dataDir) {
     <h3 class="episode_id">Episode </h3>
     <h2 class="title"></h2>
     <p class="opening_crawl"></p>
-    <p class="release_date"></p>
-    <p class="producer"></p>
+    <div>
+      <p class="release_date">Release date: </p>
+      <p class="producer">Producer: </p>
+    </div>
     <a href="#allMovies">Terug</a>
   `
 
