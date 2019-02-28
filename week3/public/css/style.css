@@ -45,6 +45,10 @@ p + img {
   margin-top: 1em;
 }
 
+img + a {
+  margin-top: 1em;
+}
+
 div p {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
