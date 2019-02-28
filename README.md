@@ -42,10 +42,9 @@ This is a list of things I want to do in this course:
 
 - [X] Make use of `localStorage`.
 - [X] Split code into modules.
-- [ ] .
 
 ## Description 📝
-During this course I created a web app from scratch, so without any frameworks or libraries, using HTML, CSS and Javascript. The data I use comes from the [Star Wars API](#api-). For now it only displays data from the API which is requested using `fetch()`.
+During this course I created a web app from scratch, so without any frameworks or libraries, using HTML, CSS and Javascript. The data I use comes from the [Star Wars API](#api-). The user has the ability to navigate to the detail page of each Star Wars movie. The Detail page shows the episode number, title, opening crawl, release date and producer.
 
 ## Installing 🔍
 To install this application enter the following into your terminal:
