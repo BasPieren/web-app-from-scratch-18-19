@@ -93,3 +93,18 @@ function detailTemplate(container, data, dataDir) {
 
   Transparency.render(template, data, dataDir)
 }
+
+export function loadingStart() {
+  const main = document.querySelector('main'),
+        article = document.createElement('article'),
+        loadingTemplate = `
+          <p>Getting data about a galaxy far far away...</p>
+          <img src="public/images/loading-gif.gif">
+        `
+
+  console.log('Loading...')
+
+  main.appendChild(article)
+
+  article.innerHTML = loadingTemplate
+}
