@@ -6,14 +6,14 @@ https://stackoverflow.com/questions/979256/sorting-an-array-of-javascript-object
 https://codepen.io/joostf/pen/OQxpxx
 ------ */
 
-import { loadingStart } from './modules/template.js'
+import { loadingState } from './modules/states.js'
 import { filterData } from './modules/filter.js'
 import { routing } from './modules/routing.js'
 
 function getData() {
   const apiURL = 'https://swapi.co/api/films/'
 
-  loadingStart()
+  loadingState()
 
   fetch(apiURL)
     .then(response => {
