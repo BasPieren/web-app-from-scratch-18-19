@@ -96,6 +96,7 @@ The Star Wars API allows you to get data on different Star Wars subjects like th
   * [Sorting an array of JavaScript objects](https://stackoverflow.com/questions/979256/sorting-an-array-of-javascript-objects)
   * [Get request (promise)](https://codepen.io/joostf/pen/OQxpxx)
   * [BB-8 Gif](https://gifer.com/en/24S3)
+  * [Ben Kenobi image](https://www.starwars.com/news/25-great-star-wars-a-new-hope-quotes)
 
 ### Honourable Mentions
 
