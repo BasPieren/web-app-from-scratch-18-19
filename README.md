@@ -2,7 +2,7 @@
 
 This is my repo for the Web App From Scratch course.
 
-![Web App from Scratch Screenshot](https://i.imgur.com/GmbGwAx.png)
+![Web App from Scratch Screenshot](https://i.imgur.com/evgYYHj.png)
 
 ## Table of Contents 🗃
 * [To Do](#to-do-)
@@ -95,6 +95,7 @@ The Star Wars API allows you to get data on different Star Wars subjects like th
   * [Fetching data from the server](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data)
   * [Sorting an array of JavaScript objects](https://stackoverflow.com/questions/979256/sorting-an-array-of-javascript-objects)
   * [Get request (promise)](https://codepen.io/joostf/pen/OQxpxx)
+  * [BB-8 Gif](https://gifer.com/en/24S3)
 
 ### Honourable Mentions
 
