@@ -1,3 +1,5 @@
+import { error404 } from './states.js'
+
 export function overviewPage() {
   const overviewMain = document.querySelector('main')
   let lStorage = localStorage.getItem('data'),
@@ -41,34 +43,40 @@ function overviewTemplate(container, data, dataDir) {
 }
 
 export function detailPage(episode) {
-  const detailMain = document.querySelector('main')
   let lStorage = localStorage.getItem('data'),
-      checkData = (() => {
-        let parseStorage = JSON.parse(lStorage),
-            findMatch = parseStorage.find(d => d.episode_id == episode),
-            dataDirectives = {
-              episode_id: {
-                text: function(params) { // Arrow function doesn't work?
-                  return params.value + this.episode_id
-                }
-              },
-              release_date: {
-                text: function(params) { // Arrow function doesn't work?
-                  return params.value + this.release_date
-                }
-              },
-              producer: {
-                text: function(params) { // Arrow function doesn't work?
-                  return params.value + this.producer
+      filteredData = JSON.parse(lStorage)
+
+  if (episode > filteredData.length){
+    error404()
+  } else {
+    const detailMain = document.querySelector('main')
+    let lStorage = localStorage.getItem('data'),
+        checkData = (() => {
+          let findMatch = filteredData.find(d => d.episode_id == episode),
+              dataDirectives = {
+                episode_id: {
+                  text: function(params) { // Arrow function doesn't work?
+                    return params.value + this.episode_id
+                  }
+                },
+                release_date: {
+                  text: function(params) { // Arrow function doesn't work?
+                    return params.value + this.release_date
+                  }
+                },
+                producer: {
+                  text: function(params) { // Arrow function doesn't work?
+                    return params.value + this.producer
+                  }
                 }
               }
-            }
-        if (episode && findMatch.episode_id) {
-          detailTemplate(detailMain, findMatch, dataDirectives)
-        } else {
-          console.log('Fail')
-        }
-      })()
+          if (findMatch.episode_id) {
+            detailTemplate(detailMain, findMatch, dataDirectives)
+          } else {
+            console.log('Fail')
+          }
+        })()
+  }
 }
 
 function detailTemplate(container, data, dataDir) {
@@ -92,19 +100,4 @@ function detailTemplate(container, data, dataDir) {
   article.innerHTML = detailTemplate
 
   Transparency.render(template, data, dataDir)
-}
-
-export function loadingStart() {
-  const main = document.querySelector('main'),
-        article = document.createElement('article'),
-        loadingTemplate = `
-          <p>Getting data about a galaxy far far away...</p>
-          <img src="public/images/loading-gif.gif">
-        `
-
-  console.log('Loading...')
-
-  main.appendChild(article)
-
-  article.innerHTML = loadingTemplate
 }
